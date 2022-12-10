@@ -1,3 +1,5 @@
+//written by engtheITSpecialist 
+//linkedin.com/in/engin-taş-8659537b
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,7 +21,7 @@ public class DosyaIslemleri {
 	        this.sonucString=b;
 	        this.incorrect=c;
 	        
-	         //kazanılan paranın yazıldığı dosyayı oluşturuyoruz.
+	         //creating file which is include earn money datas.
 	            File fileEarnedMoney=new File("E:/earnedMoney.txt");
 	       if(!fileEarnedMoney.exists()){
 	           fileEarnedMoney.createNewFile();
@@ -28,25 +30,25 @@ public class DosyaIslemleri {
 	            File fileSonuc;
 	            File fileIncorrect;
 	            
-	            
+	            //choose operation for multipliciation is 1 etc.
 	            if(this.islemTipi==1){
-	            //sonuçlar ve kazanımlar için file  oluşturuyoruz..
+	            //create file for write result and gains.
 	            fileSonuc=new File("E:/carpma/carpmasonuclar.txt");
-	            //yanlışların istatistiğinin tutulduğu dosyayı oluşturuyoruz.
+	            //create file for incorrect answers.
 	            fileIncorrect=new File("E:/carpma/incorrectStatistic.txt");
 	            
 	        }
 	        else if(this.islemTipi==2){
-	                //sonuçlar ve kazanımlar için file  oluşturuyoruz..
+	        	//create file for write result and gains.
 	            fileSonuc=new File("E:/cikarma/cikarmasonuclar.txt");
-	            //yanlışların istatistiğinin tutulduğu dosyayı oluşturuyoruz.
+	          //create file for incorrect answers.
 	            fileIncorrect=new File("E:/cikarma/incorrectStatistic.txt");
 	                   
 	        }
 	        else{
-	            //sonuçlar ve kazanımlar için file  oluşturuyoruz..
+	        	//create file for write result and gains.
 	            fileSonuc=new File("E:/toplama/toplamasonuclar.txt");
-	            //yanlışların istatistiğinin tutulduğu dosyayı oluşturuyoruz.
+	          //create file for incorrect answers..
 	            fileIncorrect=new File("E:/toplama/incorrectStatistic.txt");       
 	        }
 	            
@@ -61,11 +63,11 @@ public class DosyaIslemleri {
 		            }  
 	            
 	            
-	          //filewriter nesnesi oluşturuyoruz. ardından bufferedreader nesnesi oluşturyoruz.
+	         
 	            FileWriter fwSonuc=new FileWriter(fileSonuc,true);
 	            BufferedWriter bwSonuc=new BufferedWriter(fwSonuc);
 
-	            // yanlışlar için filewriter nesnesi oluşturuyoruz. ardından bufferedreader nesnesi oluşturyoruz.
+	            // creating bufferedwriter object. and we write result in bufferedwriter object.
 	            FileWriter fwIncorrect=new FileWriter(fileIncorrect,true);
 	            BufferedWriter bwIncorrect=new BufferedWriter(fwIncorrect);
 	            bwSonuc.newLine();
@@ -87,7 +89,7 @@ public class DosyaIslemleri {
 	    }
 	     
 	    
-	    
+	    //this method read data from earn money from file.
 	public  int paraOku(){
 	           int para=0;
 	           String s="";
@@ -106,7 +108,7 @@ public class DosyaIslemleri {
 	       }
 
 	
-	
+	//this method write earn money to file.
 	
 	public  static void paraYaz(int a){
 	           int para=0;
