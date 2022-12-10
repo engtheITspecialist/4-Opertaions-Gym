@@ -1,3 +1,6 @@
+//written by engtheITSpecialist 
+//linkedin.com/in/engin-ta≈ü-8659537b
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -14,12 +17,13 @@ public class CikarmaYap {
        int count=0;
        long StartTime=System.currentTimeMillis();
        String output = "";
-       while(count<15){
+       //you can change amount of questions. i decided 15 questions in begining. 
+       while(count<20){
            int number1=(int)(Math.random()*10);
            int number2=(int)(Math.random()*10);
            
            
-           
+           // we can check number1 and number2 which one is bigger then other. we are changing if first one is small
            if(number1<number2){
                int temp=number1;
                number1=number2;
@@ -27,31 +31,31 @@ public class CikarmaYap {
                
            }
            
-           String answerString=JOptionPane.showInputDialog(number1+"-"+number2+" nedir? ");
+           String answerString=JOptionPane.showInputDialog(Messages.QUESTƒ∞ON+number1+"-"+number2+" ? ");
            int answer=Integer.parseInt(answerString);
            String replyString;
            if(number1-number2==answer){
-               replyString="Doru bildin Kaan ";
+               replyString=Messages.ADMIRE;
                correctCount++;
            }else{
-               replyString="Cevab˝n yanl˝˛\n"+ number1+"-"+number2+" cevap "+(number1-number2)+" olmal˝yd˝.";
+               replyString=Messages.WRONGANSWER+ number1+"-"+number2+" need to be  "+(number1-number2);
                incorrectStatistic+=number1+"-"+number2+"="+answerString+"\n";
            }
            JOptionPane.showMessageDialog(null, replyString);
            count++;
-           output+="\n"+number1+"-"+number2+"="+answerString+((number1-number2==answer) ? " doru ":"yanl˝˛");
+           output+="\n"+number1+"-"+number2+"="+answerString+((number1-number2==answer) ? " correct ":"incorrect");
            
        }
        long endTime=System.currentTimeMillis();
        long testTime=endTime-StartTime;
-       sonuc=correctCount+" adet dogru cevap verdin\n";
-       JOptionPane.showMessageDialog(null,output+" \n"+ testTime/1000+ "saniyede "+sonuc);
+       sonuc=correctCount+" You answered "+correctCount+" correctly\n";
+       JOptionPane.showMessageDialog(null,output+sonuc+" \n in "+ testTime/1000+ "second.");
        
        Date date=new Date();
        DateFormat df=new SimpleDateFormat("dd/MM/yyyy hh:mm");
        
        
-        String mesaj=df.format(date)+">>>>>"+(testTime/1000)+" saniyede "+sonuc+">>>>> "+(correctCount*2)+ "kuru˛ kazand˝n.";
+        String mesaj=df.format(date)+">>>>> in "+(testTime/1000)+" seconds "+sonuc+">>>>> You earn "+(correctCount)+ "cent.";
         incorrectString=incorrectStatistic+"";
        DosyaIslemleri di=new DosyaIslemleri(2, mesaj,incorrectString);
        totalMoney=(correctCount*2)+di.paraOku();
