@@ -1,8 +1,11 @@
+//written by engtheITSpecialist 
+//linkedin.com/in/engin-taÅŸ-8659537b
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class KaanDortIslem extends javax.swing.JFrame{
-
+//This class is main window form class.
 	 public KaanDortIslem() {
 	        DosyaIslemleri di= new DosyaIslemleri();
 	        
@@ -37,25 +40,26 @@ public class KaanDortIslem extends javax.swing.JFrame{
 
 	        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
 	        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-	        jLabel1.setText("KAAN TAÞ DÖRT ÝÞLEM UYGULAMASI");
+	        //you can change caption of Form
+	        jLabel1.setText("4-Operations Gym");
 
 	        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-	        jButton1.setText("Çarpma Yap");
+	        jButton1.setText("Do Multiplications");
 	        jButton1.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton1ActionPerformed(evt);
 	            }
 	        });
 
-	        jButton2.setText("Çýkarma Yap");
+	        jButton2.setText("Do Subtraction");
 	        jButton2.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton2ActionPerformed(evt);
 	            }
 	        });
 
-	        jButton3.setText("Toplama Yap");
+	        jButton3.setText("Do Addition");
 	        jButton3.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton3ActionPerformed(evt);
@@ -87,12 +91,12 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	        );
 
 	        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-
-	        jLabel2.setText("Bakiye");
+//i use to gain money for every correct answer. this label for amount of user.
+	        jLabel2.setText("Amount");
 
 	        jLabel3.setText("0");
 
-	        jLabel4.setText("Kuruþ Paran var");
+	        jLabel4.setText("Cent You have money");
 
 	        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
 	        jPanel2.setLayout(jPanel2Layout);
@@ -119,9 +123,9 @@ public class KaanDortIslem extends javax.swing.JFrame{
 
 	        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
 
-	        jButton4.setText("Yanlýþlarý Göster");
+	        jButton4.setText("Show incorrect answers");
 
-	        jButton5.setText("Çýkýþ Yap");
+	        jButton5.setText("Exit");
 	        jButton5.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton5ActionPerformed(evt);
@@ -220,10 +224,7 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	     * @param args the command line arguments
 	     */
 	    
-	    
-	    
-	    
-	    
+	      
 	    public static void main(String args[]) {
 	        /* Set the Nimbus look and feel */
 	        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -272,8 +273,3 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	    private javax.swing.JPanel jPanel2;
 	    private javax.swing.JPanel jPanel3;
 	    // End of variables declaration//GEN-END:variables
-
-	   
-
-
-}
