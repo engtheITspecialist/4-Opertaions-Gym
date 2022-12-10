@@ -1,3 +1,6 @@
+//written by engtheITSpecialist 
+//linkedin.com/in/engin-ta≈ü-8659537b
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -18,11 +21,12 @@ public class CarpmaYap {
     int count=0;
     long StartTime=System.currentTimeMillis();
     String output = "";
-    while(count<15){
+    //you can change amount of questions. i decided 15 questions in begining. 
+    while(count<20){
         int number1=0;
         int number2=0;
         int answer=0;
-//rastgele sayƒ±larda 1 ve 0 olmasƒ±n. 
+      //you can decide which numbers choosen as randomly. for example i dont want numbers these are small 4 
         do {
         number1=(int)(Math.random()*10);
         number2=(int)(Math.random()*10);
@@ -32,33 +36,33 @@ public class CarpmaYap {
         
         
         do {
-        	answerString=JOptionPane.showInputDialog(number1+"X"+number2+" nedir? ");
+        	answerString=JOptionPane.showInputDialog(Messages.QUESTƒ∞ON+number1+"*"+number2+" ? ");
         	answer=Integer.parseInt(answerString);
         }while(answer>100||answer<0);
         
         String replyString;
         if(number1*number2==answer){
-            replyString="Doru bildin Kaan ";
+            replyString=Messages.ADMIRE;
             correctCount++;
         }else{
-            replyString="Cevab˝n yanl˝˛\n"+ number1+"X"+number2+" cevap "+(number1*number2)+" olmal˝yd˝";
+            replyString=Messages.WRONGANSWER+"*"+number2+" need to be  "+(number1*number2);
             incorrectStatistic+=number1+"X"+number2+"="+answerString+"\n";
         }
         JOptionPane.showMessageDialog(null, replyString);
         count++;
-        output+="\n"+number1+"X"+number2+"="+answerString+((number1*number2==answer) ? " doru ":"yanli˛");
+        output+="\n"+number1+"X"+number2+"="+answerString+((number1*number2==answer) ? " correct ":"incorrect");
         
     }
    
     long endTime=System.currentTimeMillis();
     long testTime=endTime-StartTime;
-    sonuc=correctCount+" adet dogru cevap verdin\n";
-    JOptionPane.showMessageDialog(null,output+" \n"+ testTime/1000+ "saniyede "+sonuc);
+    sonuc=" You answered "+correctCount+" correctly\n";
+    JOptionPane.showMessageDialog(null,output+sonuc+" \n in "+ testTime/1000+ "second.");
     
     Date date=new Date();
     DateFormat df=new SimpleDateFormat("dd/MM/yyyy hh:mm");
     
-    String mesaj=df.format(date)+">>>>>"+(testTime/1000)+" saniyede "+sonuc+">>>>> "+(correctCount*4)+ "kuru˛ kazand˝n.";
+    String mesaj=df.format(date)+">>>>> in "+(testTime/1000)+" seconds "+sonuc+">>>>> You earn "+(correctCount)+ "cent.";
     
     
     incorrectString=incorrectStatistic+"";
