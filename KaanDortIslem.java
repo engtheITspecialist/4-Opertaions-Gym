@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class KaanDortIslem extends javax.swing.JFrame{
-//This class is main window form class.
+
 	 public KaanDortIslem() {
 	        DosyaIslemleri di= new DosyaIslemleri();
 	        
@@ -28,6 +28,7 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	        jButton1 = new javax.swing.JButton();
 	        jButton2 = new javax.swing.JButton();
 	        jButton3 = new javax.swing.JButton();
+	        jButton6 = new javax.swing.JButton();
 	        jPanel2 = new javax.swing.JPanel();
 	        jLabel2 = new javax.swing.JLabel();
 	        jLabel3 = new javax.swing.JLabel();
@@ -40,32 +41,36 @@ public class KaanDortIslem extends javax.swing.JFrame{
 
 	        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
 	        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-	        //you can change caption of Form
-	        jLabel1.setText("4-Operations Gym");
+	        jLabel1.setText("KAAN TAŞ DÖRT İŞLEM UYGULAMASI");
 
 	        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-	        jButton1.setText("Do Multiplications");
+	        jButton1.setText("Çarpma Yap");
 	        jButton1.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton1ActionPerformed(evt);
 	            }
 	        });
 
-	        jButton2.setText("Do Subtraction");
+	        jButton2.setText("Çıkarma Yap");
 	        jButton2.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton2ActionPerformed(evt);
 	            }
 	        });
 
-	        jButton3.setText("Do Addition");
+	        jButton3.setText("Toplama Yap");
 	        jButton3.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton3ActionPerformed(evt);
 	            }
 	        });
-
+	        jButton6.setText("Bolme Yap");
+	        jButton6.addActionListener(new java.awt.event.ActionListener() {
+	            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	                jButton6ActionPerformed(evt);
+	            }
+	        });
 	        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 	        jPanel1.setLayout(jPanel1Layout);
 	        jPanel1Layout.setHorizontalGroup(
@@ -75,7 +80,8 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 	                    .addComponent(jButton1)
 	                    .addComponent(jButton2)
-	                    .addComponent(jButton3))
+	                    .addComponent(jButton3)
+	                    .addComponent(jButton6))
 	                .addContainerGap(18, Short.MAX_VALUE))
 	        );
 	        jPanel1Layout.setVerticalGroup(
@@ -87,16 +93,18 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	                .addComponent(jButton2)
 	                .addGap(18, 18, 18)
 	                .addComponent(jButton3)
+	                .addGap(18, 18, 18)
+	                .addComponent(jButton6)
 	                .addContainerGap(88, Short.MAX_VALUE))
 	        );
 
 	        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-//i use to gain money for every correct answer. this label for amount of user.
-	        jLabel2.setText("Amount");
+
+	        jLabel2.setText("Bakiye");
 
 	        jLabel3.setText("0");
 
-	        jLabel4.setText("Cent You have money");
+	        jLabel4.setText("Kuruş Paran var");
 
 	        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
 	        jPanel2.setLayout(jPanel2Layout);
@@ -123,9 +131,9 @@ public class KaanDortIslem extends javax.swing.JFrame{
 
 	        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
 
-	        jButton4.setText("Show incorrect answers");
+	        jButton4.setText("Yanlışları Göster");
 
-	        jButton5.setText("Exit");
+	        jButton5.setText("Çıkış Yap");
 	        jButton5.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                jButton5ActionPerformed(evt);
@@ -194,7 +202,16 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	        }
 	        
 	    }//GEN-LAST:event_jButton1ActionPerformed
-
+	    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	        // TODO add your handling code here:
+	        BolmeYap bolme= new BolmeYap();
+	        try {
+	            bolme.Bolme();
+	        } catch (IOException ex) {
+	            Logger.getLogger(KaanDortIslem.class.getName()).log(Level.SEVERE, null, ex);
+	        }
+	        
+	    }//GEN-LAST:event_jButton1ActionPerformed
 	    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 	CikarmaYap cikarmayap= new CikarmaYap();
 	        try {
@@ -224,7 +241,10 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	     * @param args the command line arguments
 	     */
 	    
-	      
+	    
+	    
+	    
+	    
 	    public static void main(String args[]) {
 	        /* Set the Nimbus look and feel */
 	        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -265,6 +285,7 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	    private javax.swing.JButton jButton3;
 	    private javax.swing.JButton jButton4;
 	    private javax.swing.JButton jButton5;
+	    private javax.swing.JButton jButton6;
 	    private javax.swing.JLabel jLabel1;
 	    private javax.swing.JLabel jLabel2;
 	    private javax.swing.JLabel jLabel3;
@@ -273,3 +294,8 @@ public class KaanDortIslem extends javax.swing.JFrame{
 	    private javax.swing.JPanel jPanel2;
 	    private javax.swing.JPanel jPanel3;
 	    // End of variables declaration//GEN-END:variables
+
+	   
+
+
+}
